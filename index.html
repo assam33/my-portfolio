@@ -71,7 +71,7 @@
             </div>
     </div>
     <div class="hero-image">
-        <img src="assets/images/Untitled design (1).png" alt="Muhammad Assam">
+        <img src="/assets/images/Untitled design (1).png" alt="Muhammad Assam">
     </div>
     </div> 
 </div>
@@ -220,14 +220,23 @@ also design the site from scratch and consult you during the job.</p>
             menulinks.style.display = "block";
         }});
 
-let closeMenu = document.querySelectorAll('.menu-links a');
-closeMenu.addEventListener('mouseover', () => {
-    menulinks.style.display = "none";
+closeMenuLinks.forEach(link => {
+    link.addEventListener('mouseover', () => {
+        menulinks.style.display = 'none';
+    });
+    link.addEventListener('mouseleave', () => {
+        menulinks.style.display = 'block';
+    });
 });
 
-closeMenu.addEventListener('mouseleave', () => {
-    menulinks.style.display = "block";
-});
+// let closeMenu = document.querySelectorAll('.menu-links a');
+// closeMenu.addEventListener('mouseover', () => {
+//     menulinks.style.display = "none";
+// });
+
+// closeMenu.addEventListener('mouseleave', () => {
+//     menulinks.style.display = "block";
+// });
 
 
 
