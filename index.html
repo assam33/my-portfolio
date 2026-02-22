@@ -213,6 +213,10 @@ also design the site from scratch and consult you during the job.</p>
 
     let menubutton = document.querySelector('.menu-bar');
     let menulinks = document.querySelector('.menu-links');
+    // select all anchor tags inside the mobile menu so we can hide the menu
+    // when any of them is hovered or left
+    let closeMenuLinks = document.querySelectorAll('.menu-links a');
+
     menubutton.addEventListener('click', () => {
         if (menulinks.style.display === "block") {
             menulinks.style.display = "none";
@@ -220,14 +224,14 @@ also design the site from scratch and consult you during the job.</p>
             menulinks.style.display = "block";
         }});
 
-closeMenuLinks.forEach(link => {
-    link.addEventListener('mouseover', () => {
-        menulinks.style.display = 'none';
+    closeMenuLinks.forEach(link => {
+        link.addEventListener('mouseover', () => {
+            menulinks.style.display = 'none';
+        });
+        link.addEventListener('mouseleave', () => {
+            menulinks.style.display = 'block';
+        });
     });
-    link.addEventListener('mouseleave', () => {
-        menulinks.style.display = 'block';
-    });
-});
 
 // let closeMenu = document.querySelectorAll('.menu-links a');
 // closeMenu.addEventListener('mouseover', () => {
