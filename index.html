@@ -214,7 +214,7 @@ also design the site from scratch and consult you during the job.</p>
     let menubutton = document.querySelector('.menu-bar');
     let menulinks = document.querySelector('.menu-links');
     // select all anchor tags inside the mobile menu so we can hide the menu
-    // when any of them is hovered or left
+    // when a link is clicked (better UX than hover)
     let closeMenuLinks = document.querySelectorAll('.menu-links a');
 
     menubutton.addEventListener('click', () => {
@@ -224,13 +224,16 @@ also design the site from scratch and consult you during the job.</p>
             menulinks.style.display = "block";
         }});
 
+    // hide the menu when any link is clicked
     closeMenuLinks.forEach(link => {
-        link.addEventListener('mouseover', () => {
+        link.addEventListener('click', () => {
             menulinks.style.display = 'none';
         });
-        link.addEventListener('mouseleave', () => {
-            menulinks.style.display = 'block';
-        });
+    });
+
+    // if the user moves the mouse away from the entire menu container, ensure it hides too
+    menulinks.addEventListener('mouseleave', () => {
+        menulinks.style.display = 'none';
     });
 
 // let closeMenu = document.querySelectorAll('.menu-links a');
@@ -250,4 +253,3 @@ also design the site from scratch and consult you during the job.</p>
 
 </body>
 </html>
-
