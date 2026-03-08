@@ -403,7 +403,9 @@ ul { list-style: none; }
 /* PORTFOLIO SECTION */
 .portfolio {
     background-color: #1a1a1a;
-    height: 1010px;
+    height: 730px;
+    padding-bottom: 120px;
+    overflow: hidden; /* Prevent carousel slides from overflowing into the next section */
 }
 .portfolio .section-title h2:hover {
     color: white;
@@ -411,13 +413,14 @@ ul { list-style: none; }
     transition: 0.9s ease;
     border-color: red;
     color: #ff0000;
+    cursor: pointer;
 }
 
 .portfolio-header {
-    background-image: url('https://via.placeholder.com/1500x300/4CAF50/ffffff?text=Mountains+Background');
-    background-size: cover;
-    background-position: center;
-    padding: 100px 0;
+    /* background-image: url('/assets/images/modern-desktop-background-geometric-blue-design-vector_53876-135923.avif'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    padding: 20px 0;
 }
 
 .portfolio-filters {

@@ -1,0 +1,155 @@
+    :root {
+      --primary-color: #ff4a2f;
+      --text-color: #ffffff;
+      --bg-gradient: radial-gradient(circle at center, #1a1a2e 0%, #000000 100%);
+    }
+
+    .portfolio-grid {
+      background: linear-gradient(180deg, #050505 0%, #0c0c0d 100%);
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 62vh;
+      overflow: hidden; /* Prevent scrollbars during animation */
+    }
+
+    /* Main Container */
+    .swiper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      padding-top: 60px;
+      padding-bottom: 90px; /* Space for pagination */
+      max-width: 900px;
+    }
+
+    /* Force pagination below the slides */
+    .swiper-pagination {
+      position: relative !important;
+      margin-top: 24px;
+      bottom: auto !important;
+      transform: none !important;
+    }
+
+    /* Slide Styling */
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: min(480px, 78vw);
+      height: min(340px, 46vh);
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* The "Glow" behind the active slide */
+    .swiper-slide-active::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle, rgba(0,122,255,0.2) 0%, rgba(0,0,0,0) 70%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Text Overlay (Hidden by default) */
+    .slide-content {
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+      width: 220px;
+      height: 220px;
+      padding: 30px;
+      box-sizing: border-box;
+      background: rgba(255, 69, 49, 0.95);
+      border-radius: 50%;
+      color: white;
+      opacity: 0;
+      transform: translateY(20px) scale(0.9);
+      transition: all 0.4s ease;
+      z-index: 2;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Show content only on active slide */
+    .swiper-slide-active .slide-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .slide-content h2 {
+      margin: 0 0 10px 0;
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-shadow: 0 3px 14px rgba(0,0,0,0.5);
+    }
+
+    .slide-content p {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 500;
+      opacity: 0.9;
+      letter-spacing: 0.5px;
+    }
+
+    /* Navigation Buttons */
+    .swiper-button-next, .swiper-button-prev {
+      color: #ffffff !important;
+      background: transparent !important;
+      background-image: none !important;
+      border: none !important;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+      filter: none !important;
+    }
+
+    .swiper-button-next:after, .swiper-button-prev:after {
+      font-size: 18px;
+      font-weight: bold;
+      /* color: #ffffff !important; */
+    }
+
+    .swiper-button-next:hover, .swiper-button-prev:hover {
+      color: red !important;
+      transform: scale(1.1);
+    }
+
+    .swiper-button-next:active, .swiper-button-prev:active {
+      color: #ff4a2f !important;
+    }
+
+    /* Pagination */
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background: rgba(255,255,255,0.3);
+      /* background: white; */
+      opacity: 1;
+      transition: all 0.3s ease;
+    }
+    
+    .swiper-pagination-bullet-active {
+      background: rgba(255, 255, 255, 0.95) !important;
+      width: 25px;
+      border-radius: 5px;
+    }
